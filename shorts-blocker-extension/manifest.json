@@ -1,0 +1,54 @@
+{
+  "manifest_version": 3,
+  "name": "Shorts Blocker",
+  "version": "1.0.0",
+  "description": "Hard-blocks short-form video: YouTube Shorts, Instagram & Facebook Reels, Reddit videos, Snapchat Spotlight, TikTok and more.",
+  "permissions": ["webNavigation", "storage"],
+  "host_permissions": [
+    "*://*.youtube.com/*",
+    "*://*.instagram.com/*",
+    "*://*.facebook.com/*",
+    "*://*.reddit.com/*",
+    "*://*.redd.it/*",
+    "*://*.snapchat.com/*",
+    "*://*.tiktok.com/*",
+    "*://*.likee.video/*",
+    "*://*.triller.co/*",
+    "*://*.kwai.com/*",
+    "*://*.douyin.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Shorts Blocker",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content/toggle.js"],
+      "css": ["content/youtube.css"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["*://*.instagram.com/*"],
+      "js": ["content/toggle.js"],
+      "css": ["content/instagram.css"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["*://*.facebook.com/*"],
+      "js": ["content/toggle.js"],
+      "css": ["content/facebook.css"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["*://*.reddit.com/*"],
+      "js": ["content/toggle.js"],
+      "css": ["content/reddit.css"],
+      "run_at": "document_start"
+    }
+  ]
+}

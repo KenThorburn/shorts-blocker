@@ -1,0 +1,7 @@
+/* Best-effort: hides Reels entry points (nav, feed, profile tab, DMs). Instagram obfuscates class names, so this keys off hrefs. */
+
+html[data-sb-hide] a[href*="/reels/"],
+html[data-sb-hide] a[href*="/reel/"],
+html[data-sb-hide] article:has(a[href*="/reel/"]) {
+  display: none !important;
+}

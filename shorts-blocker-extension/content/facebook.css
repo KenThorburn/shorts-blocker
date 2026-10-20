@@ -1,0 +1,9 @@
+/* Best-effort: hides Reels entry points (nav, feed, Messenger). Facebook obfuscates class names, so this keys off hrefs and aria-labels. */
+
+html[data-sb-hide] a[href*="/reel/"],
+html[data-sb-hide] a[href*="/reels/"],
+html[data-sb-hide] [aria-label="Reels"],
+html[data-sb-hide] [aria-label="Reels and short videos"],
+html[data-sb-hide] [role="article"]:has(a[href*="/reel/"]) {
+  display: none !important;
+}

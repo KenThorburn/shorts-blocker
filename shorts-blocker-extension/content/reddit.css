@@ -1,0 +1,17 @@
+/* Reddit has no Shorts-style feed URL on web, so hide video posts and posts linking to short-form platforms. */
+
+/* New Reddit (shreddit) */
+html[data-sb-hide] shreddit-post[post-type="video"],
+html[data-sb-hide] shreddit-post:has(shreddit-player, shreddit-player-2),
+html[data-sb-hide] shreddit-post[content-href*="youtube.com/shorts"],
+html[data-sb-hide] shreddit-post[content-href*="tiktok.com"],
+html[data-sb-hide] shreddit-post[content-href*="instagram.com/reel"],
+html[data-sb-hide] article:has(> shreddit-post[post-type="video"]),
+
+/* Old Reddit */
+html[data-sb-hide] .thing[data-domain="v.redd.it"],
+html[data-sb-hide] .thing[data-domain="tiktok.com"],
+html[data-sb-hide] .thing[data-url*="youtube.com/shorts"],
+html[data-sb-hide] .thing[data-url*="instagram.com/reel"] {
+  display: none !important;
+}

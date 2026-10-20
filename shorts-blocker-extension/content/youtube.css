@@ -1,0 +1,20 @@
+/* Best-effort: hides Shorts entry points. The hard block lives in background.js. */
+
+html[data-sb-hide] ytd-reel-shelf-renderer,
+html[data-sb-hide] ytd-rich-shelf-renderer[is-shorts],
+html[data-sb-hide] ytd-rich-section-renderer:has(ytd-rich-shelf-renderer[is-shorts]),
+html[data-sb-hide] ytd-rich-item-renderer:has(a[href^="/shorts/"]),
+html[data-sb-hide] ytd-video-renderer:has(a[href^="/shorts/"]),
+html[data-sb-hide] ytd-grid-video-renderer:has(a[href^="/shorts/"]),
+html[data-sb-hide] grid-shelf-view-model:has(a[href^="/shorts/"]),
+html[data-sb-hide] ytm-shorts-lockup-view-model,
+html[data-sb-hide] ytm-shorts-lockup-view-model-v2,
+html[data-sb-hide] [is-shorts],
+html[data-sb-hide] ytd-guide-entry-renderer:has(a[title="Shorts"]),
+html[data-sb-hide] ytd-mini-guide-entry-renderer[aria-label="Shorts"],
+html[data-sb-hide] yt-tab-shape[tab-title="Shorts"],
+html[data-sb-hide] yt-chip-cloud-chip-renderer:has([title="Shorts"]),
+html[data-sb-hide] ytm-reel-shelf-renderer,
+html[data-sb-hide] ytm-pivot-bar-item-renderer:has(.pivot-shorts) {
+  display: none !important;
+}
